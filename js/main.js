@@ -11,17 +11,20 @@
     else anchor.hidden = true;
   });
 
-  const emailLink = document.querySelector('[data-email-link]');
-  const configNote = document.getElementById('config-note');
-  if (emailLink) {
-    if (config.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(config.email)) {
-      emailLink.href = `mailto:${encodeURIComponent(config.email)}?subject=${encodeURIComponent('Portfolio enquiry')}`;
-      if (configNote) configNote.hidden = true;
-    } else {
-      emailLink.hidden = true;
-      if (configNote) configNote.hidden = false;
-    }
-  }
+ const emailLink = document.querySelector("[data-email-link]");
+const configNote = document.getElementById("contactConfigNote");
+
+if (emailLink) {
+  const whatsappNumber = "918743930032";
+  const message = "Hello Ankush, I visited your portfolio and would like to connect.";
+
+  emailLink.href = https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)};
+  emailLink.target = "_blank";
+  emailLink.rel = "noopener noreferrer";
+  emailLink.hidden = false;
+
+  if (configNote) configNote.hidden = true;
+}
 
   const menu = document.getElementById('menu');
   const nav = document.getElementById('navlinks');
